@@ -1,6 +1,8 @@
 FormValidator
 =============
 
+Version: 1.0
+
 Light weight, client side form validator
 
 How to use
