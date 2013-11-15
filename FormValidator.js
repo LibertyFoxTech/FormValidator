@@ -3,13 +3,18 @@
 //Written By Thomas Depole
 
 
+function log(message){
+    var has_logger = !!(window.console && window.console.log);
+    if(has_logger) console.log(message);
+}
+
 function FormValidation(form, requiredFields) {
     if (!form || !requiredFields) {
-        console.log("The form validator is missing values, and will not work, please review the code");
+        log("The form validator is missing values, and will not work, please review the code");
     } else {
         $("head").append("<style> .FormValidation_input-red { border: 1px solid red !important; }</style> ")
         $(form).attr('onSubmit', 'return FormValidation_Validator( ' + JSON.stringify(requiredFields) + ' );');
-        console.log("Form validator has successfully binded");
+        log("Form validator has successfully binded");
     }
 }
 
@@ -43,11 +48,11 @@ function FormValidation_Validator(requiredFields) {
         }
         
         if (fieldType == "checkbox") {
-            console.log("Field Typeof CheckBox isn't supported, please check ")
+            log("Field Typeof CheckBox isn't supported, please goto https://github.com/LibertyFoxTech/FormValidator/blob/master/FormValidator.js");
         }
         
         if (fieldType == "radio") {
-            
+            log("Field Typeof CheckBox isn't supported, please goto https://github.com/LibertyFoxTech/FormValidator/blob/master/FormValidator.js");
         }
     }
 }
